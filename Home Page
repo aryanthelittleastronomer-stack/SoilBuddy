@@ -74,73 +74,80 @@
   </style>
 </head>
 
+
 <body class="light transition-all">
 
-  <!-- 🌿 Navbar with clickable logo & feature links -->
+  <!-- Navbar -->
   <nav class="navbar text-white body-font shadow-lg">
     <div class="container mx-auto flex flex-wrap p-5 flex-row items-center justify-between">
-      
-      <!-- Logo and Home Link -->
-      <a href="index.html" class="flex title-font font-medium items-center mb-4 md:mb-0">
-        <img src="SoilBuddy Logo.png" alt="SoilBuddy Logo" class="logo-img mr-3">
-        <span class="text-2xl">SoilBuddy</span>
-      </a>
 
-      <!-- Navigation Links -->
-      <div class="flex space-x-6 text-sm md:text-base">
-        <a href="krishiudaan.html" class="hover:text-green-300 transition">KrishiUdaan</a>
-        <a href="amritjeevan.html" class="hover:text-green-300 transition">AmritJeevan</a>
-        <a href="bharatbot.html" class="hover:text-green-300 transition">BharatBot</a>
-        <a href="soilscan.html" class="hover:text-green-300 transition">SoilScan</a>
+      <!-- Left: Logo + Links -->
+      <div class="flex items-center space-x-10">
+        <a href="Home Page" class="flex title-font font-medium items-center">
+          <img src="SoilBuddy Logo.png" alt="SoilBuddy Logo" class="logo-img mr-3">
+          <span class="text-2xl">SoilBuddy</span>
+        </a>
+        <div class="flex space-x-6 text-sm md:text-base">
+          <a href="KrishiUdaanF.html" class="hover:text-green-300 transition">KrishiUdaan</a>
+          <a href="AmritJeevanF.html" class="hover:text-green-300 transition">AmritJeevan</a>
+          <a href="BharatBotF.html" class="hover:text-green-300 transition">BharatBot</a>
+          <a href="SoilScanF.html" class="hover:text-green-300 transition">SoilScan</a>
+        </div>
       </div>
 
-      <!-- Theme Toggle Button -->
+      <!-- Right: Theme Toggle -->
       <button id="theme-toggle" class="text-white bg-green-500 border-0 py-1 px-4 focus:outline-none hover:bg-green-600 rounded-md text-sm glow-btn">
         Dark Theme
       </button>
     </div>
   </nav>
 
-  <!-- Spacer so content doesn’t hide behind navbar -->
+  <!-- Spacer so content doesn't hide behind navbar -->
   <div class="pt-24"></div>
 
-  <!-- 🧱 Page Content Here -->
+  <!-- Page Content: Feature Cards -->
   <section class="text-gray-600 body-font">
     <div class="container px-5 py-24 mx-auto">
-      <h1 class="text-3xl font-semibold mb-4">Welcome to SoilBuddy 🌱</h1>
-      <p class="leading-relaxed text-base mb-6">
-        Empowering farmers with cutting-edge technology for a sustainable agricultural future.
+      <h1 class="text-3xl font-semibold mb-4">Welcome to SoilBuddy</h1>
+      <p class="leading-relaxed text-base mb-10">
+        Empowering farmers with technology for a sustainable future. Explore the tools below to access live features:
       </p>
 
       <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- KrishiUdaan Card -->
         <div class="p-6 border rounded-lg shadow hover:shadow-md transition">
-          <h2 class="text-xl font-semibold mb-2">✈️ KrishiUdaan</h2>
-          <p class="text-sm mb-2">Access the live crop transport tracking system.</p>
-          <a href="krishiudaan.html" class="text-green-500 hover:underline text-sm">Go to KrishiUdaan</a>
+          <h2 class="text-xl font-semibold mb-2">KrishiUdaan</h2>
+          <p class="text-sm mb-2">Live crop transport tracking system for farmers and distributors.</p>
+          <a href="KrishiUdaanF.html" class="text-green-500 hover:underline text-sm">Go to KrishiUdaan</a>
         </div>
 
+        <!-- AmritJeevan Card -->
         <div class="p-6 border rounded-lg shadow hover:shadow-md transition">
-          <h2 class="text-xl font-semibold mb-2">💧 AmritJeevan</h2>
-          <p class="text-sm mb-2">Monitor soil moisture levels in real time.</p>
-          <a href="amritjeevan.html" class="text-green-500 hover:underline text-sm">Go to AmritJeevan</a>
+          <h2 class="text-xl font-semibold mb-2">AmritJeevan</h2>
+          <p class="text-sm mb-2">Monitor and manage soil moisture in real-time using IoT sensors.</p>
+          <a href="AmritJeevanF.html" class="text-green-500 hover:underline text-sm">Go to AmritJeevan</a>
         </div>
 
+        <!-- BharatBot Card -->
         <div class="p-6 border rounded-lg shadow hover:shadow-md transition">
-          <h2 class="text-xl font-semibold mb-2">🤖 BharatBot</h2>
-          <p class="text-sm mb-2">Chat with our AI agriculture assistant.</p>
-          <a href="bharatbot.html" class="text-green-500 hover:underline text-sm">Go to BharatBot</a>
+          <h2 class="text-xl font-semibold mb-2">BharatBot</h2>
+          <p class="text-sm mb-2">AI-powered chatbot to assist farmers with agriculture-related queries.</p>
+          <a href="BharatBotF.html" class="text-green-500 hover:underline text-sm">Go to BharatBot</a>
         </div>
 
+        <!-- SoilScan Card -->
         <div class="p-6 border rounded-lg shadow hover:shadow-md transition">
-          <h2 class="text-xl font-semibold mb-2">🔬 SoilScan</h2>
-          <p class="text-sm mb-2">Upload images for AI-powered soil quality analysis.</p>
-          <a href="soilscan.html" class="text-green-500 hover:underline text-sm">Go to SoilScan</a>
+          <h2 class="text-xl font-semibold mb-2">SoilScan</h2>
+          <p class="text-sm mb-2">Upload soil images and receive AI-based quality analysis instantly.</p>
+          <a href="SoilScanF.html" class="text-green-500 hover:underline text-sm">Go to SoilScan</a>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- 🌓 Theme Toggle Script -->
+  <!-- Theme Toggle Script -->
   <script>
     const body = document.body;
     const toggleBtn = document.getElementById('theme-toggle');
