@@ -71,9 +71,25 @@
       padding: 4px;
       border: 2px solid #22c55e;
     }
-  </style>
-</head>
 
+    /* Leaflet Map Styles */
+    #map {
+      width: 1000px;
+      height: 500px;
+      margin: 2rem auto;
+      border: 2px solid #22c55e;
+      border-radius: 8px;
+    }
+  </style>
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-sA+uVTy38oi2Y+SpS53oOWhXz6D9h7PeUjI2kNjf2Hk="
+    crossorigin=""
+  />
+</head>
 
 <body class="light transition-all">
 
@@ -84,19 +100,24 @@
       <!-- Left: Logo + Links -->
       <div class="flex items-center space-x-10">
         <a href="Home Page" class="flex title-font font-medium items-center">
-          <img src="SoilBuddy Logo.png" alt="SoilBuddy Logo" class="logo-img mr-3">
+          <img src="SoilBuddy Logo.png" alt="SoilBuddy Logo" class="logo-img mr-3" />
           <span class="text-2xl">SoilBuddy</span>
         </a>
-        <div class="flex space-x-6 text-sm md:text-base">
-          <a href="KrishiUdaanF.html" class="hover:text-green-300 transition">KrishiUdaan</a>
-          <a href="AmritJeevanF.html" class="hover:text-green-300 transition">AmritJeevan</a>
-          <a href="BharatBotF.html" class="hover:text-green-300 transition">BharatBot</a>
-          <a href="SoilScanF.html" class="hover:text-green-300 transition">SoilScan</a>
-        </div>
+<!-- Inside Navbar Section -->
+<div class="flex space-x-6 text-sm md:text-base">
+  <a href="KrishiUdaanF.html" class="hover:text-green-300 transition">KrishiUdaan</a>
+  <a href="AmritJeevanF.html" class="hover:text-green-300 transition">AmritJeevan</a>
+  <a href="https://bharatbot-2a7793.zapier.app" target="_blank" rel="noopener noreferrer" class="hover:text-green-300 transition">BharatBot</a>
+  <a href="SoilScanF.html" class="hover:text-green-300 transition">SoilScan</a>
+</div>
+
       </div>
 
       <!-- Right: Theme Toggle -->
-      <button id="theme-toggle" class="text-white bg-green-500 border-0 py-1 px-4 focus:outline-none hover:bg-green-600 rounded-md text-sm glow-btn">
+      <button
+        id="theme-toggle"
+        class="text-white bg-green-500 border-0 py-1 px-4 focus:outline-none hover:bg-green-600 rounded-md text-sm glow-btn"
+      >
         Dark Theme
       </button>
     </div>
@@ -114,38 +135,35 @@
       </p>
 
       <div class="grid md:grid-cols-2 gap-8">
-
-        <!-- KrishiUdaan Card -->
         <div class="p-6 border rounded-lg shadow hover:shadow-md transition">
           <h2 class="text-xl font-semibold mb-2">KrishiUdaan</h2>
           <p class="text-sm mb-2">Live crop transport tracking system for farmers and distributors.</p>
-          <a href="KrishiUdaanF.html" class="text-green-500 hover:underline text-sm">Go to KrishiUdaan</a>
+          <a href="KrishiUdaan.html" class="text-green-500 hover:underline text-sm">Go to KrishiUdaan</a>
         </div>
 
-        <!-- AmritJeevan Card -->
         <div class="p-6 border rounded-lg shadow hover:shadow-md transition">
           <h2 class="text-xl font-semibold mb-2">AmritJeevan</h2>
           <p class="text-sm mb-2">Monitor and manage soil moisture in real-time using IoT sensors.</p>
-          <a href="AmritJeevanF.html" class="text-green-500 hover:underline text-sm">Go to AmritJeevan</a>
+          <a href="AmritJeevan.html" class="text-green-500 hover:underline text-sm">Go to AmritJeevan</a>
         </div>
 
-        <!-- BharatBot Card -->
         <div class="p-6 border rounded-lg shadow hover:shadow-md transition">
           <h2 class="text-xl font-semibold mb-2">BharatBot</h2>
           <p class="text-sm mb-2">AI-powered chatbot to assist farmers with agriculture-related queries.</p>
-          <a href="BharatBotF.html" class="text-green-500 hover:underline text-sm">Go to BharatBot</a>
+          <a href="BharatBot.html" class="text-green-500 hover:underline text-sm">Go to BharatBot</a>
         </div>
 
-        <!-- SoilScan Card -->
         <div class="p-6 border rounded-lg shadow hover:shadow-md transition">
           <h2 class="text-xl font-semibold mb-2">SoilScan</h2>
           <p class="text-sm mb-2">Upload soil images and receive AI-based quality analysis instantly.</p>
-          <a href="SoilScanF.html" class="text-green-500 hover:underline text-sm">Go to SoilScan</a>
+          <a href="SoilScan.html" class="text-green-500 hover:underline text-sm">Go to SoilScan</a>
         </div>
-
       </div>
     </div>
   </section>
+
+  <!-- Leaflet Map Container -->
+  <div id="map"></div>
 
   <!-- Theme Toggle Script -->
   <script>
@@ -158,5 +176,33 @@
       toggleBtn.textContent = body.classList.contains('dark') ? 'Light Theme' : 'Dark Theme';
     });
   </script>
+
+  <!-- Leaflet JS -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-oN1vZyD6QHBgVQmUWyguNz9w6D7hCpDUIZlWvX7k+kM="
+    crossorigin=""
+  ></script>
+
+  <script>
+    // Ensure the map initializes after DOM is loaded
+    document.addEventListener('DOMContentLoaded', function () {
+      const map = L.map('map').setView([28.5852268475905, 77.3379912558191], 17);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap contributors',
+      }).addTo(map);
+
+      L.marker([28.5852268475905, 77.3379912558191])
+        .addTo(map)
+        .bindPopup('<b>Bal Bharati Public School</b><br>Sector 21, Noida')
+        .openPopup();
+    });
+  </script>
+
+  <script async type="module" src="https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js"></script>
+  <zapier-interfaces-chatbot-embed is-popup="true" chatbot-id="cmgokxua200144bxfraqznur0"></zapier-interfaces-chatbot-embed>
 </body>
 </html>
+
